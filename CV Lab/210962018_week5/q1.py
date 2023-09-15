@@ -8,7 +8,7 @@ import numpy as np
 
 # path to input image specified and
 # image is loaded with imread command
-image = cv2.imread("C:\\Users\\ugcse.PG-CP.000\\Desktop\\210962018\\resource\\blog.webp")
+image = cv2.imread("C:\\Users\\ugcse.PG-CP.000\\Desktop\\210962018\\resource\\sudoku.png")
 
 # convert the input image into
 # grayscale color space
@@ -35,4 +35,4 @@ cv2.imshow('Image with Borders', image)
 
 # De-allocate any associated memory usage
 if cv2.waitKey(0) & 0xff == 27:
-	cv2.destroyAllWindows()
+  cv2.destroyAllWindows()
