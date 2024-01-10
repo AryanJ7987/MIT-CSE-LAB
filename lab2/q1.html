@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>                                 
+    <script
+    type="text/javascript"
+    src="jquery.min.js"
+  ></script>
+  <script type="text/javascript" language="javascript">
+    $(document).ready(function () {
+      $("button").click(function () {
+        $("#pp").attr("style","margin-left: 0px;")
+      });
+    });
+  </script>
+</head>
+<body>
+    <table border="2" id="pp" style="margin-left: 500px;">
+        <tr>
+          <th>Name</th>
+          <th>Location</th>
+          <th>Image</th>
+        </tr>
+        <tr>
+          <td style="background-color: orange;color: white;">P</td>
+          <td style="background-color: green;color: white;">Hyderabad</td>
+          <td>
+            <img src="" alt=""
+            style="height: 200px; width: 250px;">
+          </td>
+        </tr>
+        <tr>
+            <td style="background-color: maroon; color: white;">Pratik</td>
+            <td style="background-color: rgb(131, 131, 49); color:white;">Qatar</td>
+            <td>
+              <img src="" alt="" style="height: 200px; width: 250px;">
+            </td>
+        </tr>
+      </table>
+      <br></br>
+      <button style="height: 30px;">Move me daddy</button>
+</body>
+</html>
