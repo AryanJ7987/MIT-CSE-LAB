@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grade Calculator</title>
+  <link rel="stylesheet" href="all.css">
+</head>
+<body>
+
+  <h1>Grade Calculator</h1>
+
+  <label for="subject1">Subject 1:</label>
+  <input type="text" id="subject1" placeholder="Enter marks for Subject 1"><br>
+
+  <label for="subject2">Subject 2:</label>
+  <input type="text" id="subject2" placeholder="Enter marks for Subject 2"><br>
+
+  <label for="subject3">Subject 3:</label>
+  <input type="text" id="subject3" placeholder="Enter marks for Subject 3"><br>
+
+  <label for="subject4">Subject 4:</label>
+  <input type="text" id="subject4" placeholder="Enter marks for Subject 4"><br>
+
+  <button onclick="calculateGrade()">Calculate Grade</button>
+
+  <p id="result"></p>
+
+  <script>
+    function calculateGrade() {
+      const subject1Marks = parseFloat(document.getElementById('subject1').value) || 0;
+      const subject2Marks = parseFloat(document.getElementById('subject2').value) || 0;
+      const subject3Marks = parseFloat(document.getElementById('subject3').value) || 0;
+      const subject4Marks = parseFloat(document.getElementById('subject4').value) || 0;
+
+      const totalMarks = subject1Marks + subject2Marks + subject3Marks + subject4Marks;
+      const average = totalMarks / 4;
+
+      let grade;
+
+      if (average > 75) {
+        grade = 'A';
+      } else if (average > 60) {
+        grade = 'B';
+      } else if (average > 50) {
+        grade = 'C';
+      } else if (average > 40) {
+        grade = 'D';
+      } else {
+        grade = 'F';
+      }
+
+      const resultElement = document.getElementById('result');
+      resultElement.textContent = `Average: ${average.toFixed(2)}, Grade: ${grade}`;
+    }
+  </script>
+
+</body>
+</html>

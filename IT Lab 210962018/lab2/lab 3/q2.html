@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greetings and Clock</title>
+  <link rel="stylesheet" href="all.css">
+</head>
+<body>
+
+<div id="greeting-container">
+  <h1>Greetings</h1>
+  <p id="greeting-message"></p>
+  <div id="clock"></div>
+</div>
+
+<script>
+function getGreetingMessage() {
+  const currentHour = new Date().getHours();
+  let greetingMessage;
+
+  if (currentHour >= 5 && currentHour < 12) {
+    greetingMessage = "Good morning!";
+  } else if (currentHour >= 12 && currentHour < 18) {
+    greetingMessage = "Good afternoon!";
+  } else {
+    greetingMessage = "Good evening!";
+  }
+
+  return greetingMessage;
+}
+
+function updateClock() {
+  const now = new Date();
+  const hours = now.getHours().toString().padStart(2, '0');
+  const minutes = now.getMinutes().toString().padStart(2, '0');
+  const seconds = now.getSeconds().toString().padStart(2, '0');
+
+  const clockElement = document.getElementById('clock');
+  clockElement.textContent = `${hours}:${minutes}:${seconds}`;
+}
+
+function displayGreeting() {
+  const greetingContainer = document.getElementById('greeting-message');
+  greetingContainer.textContent = getGreetingMessage();
+}
+
+// Display initial greeting and clock
+displayGreeting();
+updateClock();
+
+// Update clock every second
+setInterval(updateClock, 1000);
+</script>
+
+</body>
+</html>
