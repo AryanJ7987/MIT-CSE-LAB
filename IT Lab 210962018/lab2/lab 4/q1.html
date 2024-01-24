@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+      $(document).ready(function() {
+          $("#MoveLeft").click(function() {
+             $("#myTable, #myImage").animate({
+                marginLeft: "-=20%"
+            }, 1000);
+        });
+    });
+</script>
+
+</head>
+<body>
+    <table id="myTable">
+        <thead>
+            <tr>
+                <th>Cars</th>
+                <th>company</th>
+                <th>capability</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Fortuner</td>
+                <td>Toyota</td>
+                <td>off-roading</td>
+            </tr>
+            <tr>
+                <td>Endeavour</td>
+                <td>Fords</td>
+                <td>off-roading</td>
+            </tr>
+            <tr>
+                <td>GLE</td>
+                <td>Mercedes</td>
+                <td>Luxury</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <img id="myImage" src="C:\Users\IT\Desktop\IT Lab 210962018\lab 4\q1.jpg">
+
+    <button id="MoveLeft">Move Left</button>
+
+    <script src="script.js"></script>
+</body>
+</html>

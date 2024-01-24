@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Card Designer</title>
+    <link rel="stylesheet" href="q3.css">
+    <script>
+    function updateCard() {
+    const background = document.getElementById("selectBackground").value;
+    const fontColor = document.getElementById("selectFont").value;
+    const message = document.getElementById("textInput").value;
+    const cardStyle = document.querySelector('input[name="cardStyle"]:checked').value;
+    const includeGift = document.getElementById("includeGift").checked;
+    const additionalNote = document.getElementById("paragraphInput").value;
+
+    const resultDiv = document.getElementById("result");
+    resultDiv.innerHTML = `
+        <div style="background-color: ${background}; color: ${fontColor}; padding: 20px; border-radius: 10px;">
+            <h2>${message}</h2>
+            <p>Card Style: ${cardStyle}</p>
+            <p>Include Gift: ${includeGift ? 'Yes' : 'No'}</p>
+            <p>Additional Note: ${additionalNote}</p>
+        </div>
+    `;
+}
+  </script>
+</head>
+<body>
+
+    <h1>Birthday Card Designer</h1>
+
+    <label for="selectBackground">Select Background Color:</label>
+    <select id="selectBackground">
+        <option value="pink">Pink</option>
+        <option value="blue">Blue</option>
+        <option value="yellow">Yellow</option>
+        <option value="green">Green</option>
+    </select>
+
+    <label for="selectFont">Select Font Color:</label>
+    <select id="selectFont">
+        <option value="black">Black</option>
+        <option value="white">White</option>
+        <option value="red">Red</option>
+        <option value="purple">Purple</option>
+    </select>
+
+    <label for="textInput">Enter Birthday Message:</label>
+    <input type="text" id="textInput">
+
+    <label>Choose Card Style:</label>
+    <input type="radio" name="cardStyle" value="style1" checked> Style 1
+    <input type="radio" name="cardStyle" value="style2"> Style 2
+    <input type="radio" name="cardStyle" value="style3"> Style 3
+
+    <label>Include a Gift:</label>
+    <input type="checkbox" id="includeGift"> Yes, include a gift
+
+    <label for="paragraphInput">Additional Note:</label>
+    <textarea id="paragraphInput" placeholder="Write your additional note here..."></textarea>
+
+    <button onclick="updateCard()">Update Card</button>
+
+    <div id="result"></div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

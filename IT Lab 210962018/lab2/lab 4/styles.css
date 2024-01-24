@@ -1,0 +1,38 @@
+table {
+    border-collapse: collapse;
+    width: 50%;
+    margin: 20px auto;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+    background-color:#ff0000;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #ff9900;
+}
+
+
+img {
+    display: block;
+    margin: 20px auto;
+    max-width: 30%;
+    height: auto;
+}
+
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px;
+    cursor: pointer;
+}

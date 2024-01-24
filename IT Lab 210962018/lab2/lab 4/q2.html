@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <link rel="stylesheet" href="q2.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+
+$(document).ready(function() {
+    let currentInput = "";
+
+    $(".number, .operator").on("click", function() {
+        const value = $(this).text();
+        console.log("Button clicked:", value);
+
+        if (value === "=") {
+            calculateResult();
+        } else if (value === "C") {
+            clearCalculator();
+        } else {
+            handleInput(value);
+        }
+    });
+
+    function handleInput(value) {
+        currentInput += value;
+        $("#display").val(currentInput);
+    }
+
+    function calculateResult() {
+        try {
+            const result = eval(currentInput);
+            console.log("Result:", result);
+            $("#display").val(result);
+            currentInput = result.toString();
+        } catch (error) {
+            console.error("Error:", error);
+            $("#display").val("Error");
+            clearCalculator();
+        }
+    }
+
+    function clearCalculator() {
+        currentInput = "";
+        $("#display").val("");
+    }
+});
+
+</script>
+
+
+
+</head>
+<body>
+
+    <div class="calculator">
+        <input type="text" id="display" readonly>
+        <div class="buttons">
+            <button class="number">7</button>
+            <button class="number">8</button>
+            <button class="number">9</button>
+            <button class="operator" data-operator="/">/</button>
+
+            <button class="number">4</button>
+            <button class="number">5</button>
+            <button class="number">6</button>
+            <button class="operator" data-operator="*">*</button>
+
+            <button class="number">1</button>
+            <button class="number">2</button>
+            <button class="number">3</button>
+            <button class="operator" data-operator="-">-</button>
+
+            <button class="number">0</button>
+            <button class="clear">C</button>
+            <button class="calculate">=</button>
+            <button class="operator" data-operator="+">+</button>
+        </div>
+    </div>
+
+</body>
+</html>
